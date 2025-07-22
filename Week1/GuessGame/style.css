@@ -1,0 +1,108 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --card: #f4f4f4;
+}
+
+.dark {
+  --bg: #1e1e1e;
+  --text: #ffffff;
+  --card: #2a2a2a;
+}
+
+.dark body {
+  background-image: url('bg1.png');
+}
+
+body {
+  background-image: url('bg1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background: var(--card);
+}
+
+.game-container {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #0002;
+  text-align: center;
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 400px;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  padding: 0.6rem 1.5rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+.hidden {
+  display: none;
+}
+
+.info {
+  margin: 0.3rem;
+}
+
+.leaderboard {
+  background: var(--card);
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 10px #0001;
+}
+
+#confettiCanvas {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+

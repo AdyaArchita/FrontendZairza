@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess the Number</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-bar">
+   <button id="theme-toggle" onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+  </div>
+
+  <div class="game-container">
+    <h1>🎯 Guess the Number (1–20)</h1>
+    <input type="text" id="playerName" placeholder="Your name" />
+    <input type="number" id="userGuess" placeholder="Enter your guess" min="1" max="20" />
+    
+    <button onclick="checkGuess()">Submit</button>
+    <p id="resultMessage"></p>
+    <p class="info">Attempts: <span id="attempts">0</span></p>
+    <p class="info">Score: <span id="score">100</span></p>
+    <p id="hint"></p>
+
+    <button onclick="resetGame()" id="playAgainBtn" class="hidden">🔄 Play Again</button>
+  </div>
+
+  <div class="leaderboard">
+    <h2>🏅 Leaderboard</h2>
+    <ul id="leaderboardList"></ul>
+  </div>
+
+  <canvas id="confettiCanvas"></canvas>
+  <audio id="winSound" src="win.mp3" preload="auto"></audio>
+  <script src="confetti.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
