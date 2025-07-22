@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-body">
+  <button id="scrollTopBtn" class="scroll-btn hidden">↑</button>
+
+  <header class="navbar">
+    <h1 class="brand">MyLandingPage</h1>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-text" data-aos="fade-right">
+      <h2 class="hero-heading">Hello, I'm Adya Archita Pattnaik</h2>
+      <p class="hero-subtext">A passionate full-stack developer on the way to create beautiful web experiences.</p>
+      <a href="#about" class="hero-button">Learn More</a>
+    </div>
+    <div class="hero-image" data-aos="zoom-in">
+      <img src="adya.jpg" alt="Hero" class="hero-img" />
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="section-box" data-aos="fade-up">
+      <h3 class="section-heading">About Me</h3>
+            <p>I'm a web developer specializing in building exceptional digital experiences. Currently, I'm focused on building responsive full-stack web applications.
+        I have even tried my hands on UI/UX and also been practicing DSA using C++.</p>
+        <p>I am a Second year student pursuing my Btech degree in Computer Science and Engineering at Odisha University of Technology and Research, Bhubaneswar.</p>    
+      <p>During my leisure, I love to pursue my hobbies- art and craft. I also have keen interest in reading newspaper articles.</p>    
+  <p>As a dedicated web developer, I blend in creativity and technical expertise to craft refined digital solutions that exudes quality and beauty.</p>
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <h3 class="section-heading" data-aos="fade-up">How many times did you visit me?</h3>
+    <p id="visitCounter" class="counter-value">0</p>
+    <button onclick="incrementCounter()" class="counter-button">Click Me!</button>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="section-box" data-aos="fade-up">
+      <h3 class="section-heading">Contact Me</h3>
+      <form id="contactForm" class="contact-form">
+        <input type="text" required placeholder="Your Name" class="contact-input" />
+        <input type="email" required placeholder="Your Email" class="contact-input" />
+        <textarea required placeholder="Your Message" class="contact-input"></textarea>
+        <button type="submit" class="contact-button">Send</button>
+      </form>
+      <p id="formMessage" class="form-message hidden">Message sent! ✅</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 MyLandingPage. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="confetti.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
