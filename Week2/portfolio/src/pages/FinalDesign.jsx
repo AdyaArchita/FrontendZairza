@@ -14,6 +14,21 @@ import {
 const FinalDesign = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [message, setMessage] = useState("");
+const [submitted, setSubmitted] = useState(false);
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (name && email && message) {
+    setSubmitted(true);
+    setName("");
+    setEmail("");
+    setMessage("");
+    setTimeout(() => setSubmitted(false), 4000);
+  }
+};
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -207,54 +222,69 @@ const FinalDesign = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <form className="w-full max-w-md bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-6 md:p-8 rounded-xl shadow-md space-y-6">
-            <h2 className="text-3xl md:text-4xl font-semibold text-center text-gray-800 dark:text-white">
-              Contact Me
-            </h2>
-            <div>
-              <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
-                Your Name
-              </label>
-              <input
-                type="text"
-                placeholder="Enter your full name"
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#00adb5]"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
-                Email Address
-              </label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#00adb5]"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
-                Message
-              </label>
-              <textarea
-                rows="4"
-                placeholder="Type your message..."
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#00adb5]"
-              />
-            </div>
-<div className="text-center">
-  <button
-    type="submit"
-    className="bg-[#00adb5] hover:shadow-[0_0_10px_#00adb5] text-white font-bold py-2 px-6 rounded-md transition flex items-center justify-center gap-2"
-  >
-    <img
-      src="/assets/send.png"
-      alt="Send Icon"
-      className="w-5 h-5"
+         <form
+  onSubmit={handleSubmit}
+  className="w-full max-w-md bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-6 md:p-8 rounded-xl shadow-md space-y-6"
+>
+  <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 dark:text-white">
+    Contact Me
+  </h2>
+
+  {submitted && (
+    <div className="text-green-600 dark:text-green-400 text-center font-medium">
+      ✅ Message submitted successfully!
+    </div>
+  )}
+
+  <div>
+    <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
+      Your Name
+    </label>
+    <input
+      type="text"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      placeholder="Enter your full name"
+      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#00adb5]"
     />
-    Send Message
-  </button>
-</div>
-          </form>
+  </div>
+
+  <div>
+    <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
+      Email Address
+    </label>
+    <input
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      placeholder="Enter your email"
+      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#00adb5]"
+    />
+  </div>
+
+  <div>
+    <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
+      Message
+    </label>
+    <textarea
+      rows="4"
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      placeholder="Type your message..."
+      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#00adb5]"
+    />
+  </div>
+
+  <div className="text-center">
+    <button
+      type="submit"
+      className="bg-[#00adb5] hover:shadow-[0_0_10px_#00adb5] text-white font-bold py-2 px-6 rounded-md transition flex items-center justify-center gap-2"
+    >
+      <img src="/assets/send.png" alt="Send Icon" className="w-5 h-5" />
+      Send Message
+    </button>
+  </div>
+</form>
         </motion.div>
 
 <footer
