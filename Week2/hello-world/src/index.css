@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import AOS styles */
+@import 'aos/dist/aos.css';
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  line-height: 1.5;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.dark body {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  list-style-type: disc;
+  color: #1f2937;
+}
+
+.dark ul {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Button Style */
+button {
+  background-color: #7c3aed;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #6d28d9;
+}
+
+/* Navbar */
+nav {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.dark nav {
+  background-color: #1f2937;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+}
+.dark nav h1 {
+  color: white;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.text-center {
+  text-align: center;
+}
+.p-8 {
+  padding: 2rem;
+}
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+.bg-gradient {
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+}
+.dark .bg-gradient {
+  background: linear-gradient(to right, #1f2937, #111827);
+}
+
