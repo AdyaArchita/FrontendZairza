@@ -23,10 +23,8 @@ export default function Navbar() {
   return (
     <nav className={`w-full z-50 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}`}>
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold">LOGO</h1>
+        <h1 className="text-2xl font-bold">MyPortfolio</h1>
 
-        {/* Desktop nav links and theme toggle */}
         <div className="hidden md:flex items-center gap-6 ml-auto font-medium">
           <div className="flex gap-6">
             {navLinks}
@@ -39,7 +37,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile: Theme toggle + Hamburger menu */}
         <div className="md:hidden flex items-center gap-4 ml-auto z-50">
           <button
             onClick={toggleTheme}
@@ -53,7 +50,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
